@@ -6,7 +6,7 @@
     "scripts": {
         "start": "npm run webDevServer",
         "ngrok": "ngrok http 3000",
-        "build": "npm run webpack && cp ./{CNAME,favicon.png} ./dist && mkdir -p ./dist/assets/images && cp -r ./assets/images ./dist/assets/images",
+        "build": "npm run webpack && cp ./{CNAME,favicon.png} ./dist && mkdir -p ./dist/assets/images && cp -r ./assets/images/. ./dist/assets/images",
         "deploy": "npm run build && surge ./dist",
         "test": "echo \"Error: no test specified\" && exit 1",
         "webpack": "webpack --config 'webpack.config.prod.babel.js'",
