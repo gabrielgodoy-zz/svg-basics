@@ -1,6 +1,7 @@
 import autoprefixer from 'autoprefixer';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 let path = require('path');
 
 module.exports = {
@@ -12,10 +13,12 @@ module.exports = {
       loader: 'babel-loader',
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?sourceMap'
+      loader: ExtractTextPlugin.extract(
+        'style-loader', 'css-loader'),
     }, {
       test: /\.styl$/,
-      loader: 'style-loader!css-loader?sourceMap!postcss-loader!stylus-loader',
+      loader: ExtractTextPlugin.extract(
+        'style-loader', 'css-loader?modules!postcss-loader!stylus-loader'),
     }, {
       test: /\.pug$/,
       loader: 'pug-loader?pretty'
@@ -33,44 +36,50 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve('dist'),
-    publicPath: path.resolve('/'),
   },
   postcss() {
     return [autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9'],
-      remove: false,
+      remove: false
     })];
   },
   plugins: [
+    new ExtractTextPlugin('main.css'),
+
+    // Optimizes the order that the files are bundled
+    new webpack.optimize.OccurenceOrderPlugin(),
+
+    // Eliminates duplicated packages when generating bundle
+    new webpack.optimize.DedupePlugin(),
+
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'path.html',
       template: './pages/path.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'viewport-viewbox-aspect-ratio.html',
       template: './pages/viewport-viewbox-aspect-ratio.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'path-commands-table.html',
       template: './pages/path-commands-table.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'arcs-example.html',
       template: './pages/arcs-example.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: '404.html',
       template: './pages/404.pug',
-      inject: false
     }),
   ],
   resolve: {

@@ -33,8 +33,7 @@ module.exports = {
   devtool: 'inline-source-map',
   output: {
     filename: 'main.js',
-    path: path.resolve('dist'),
-    publicPath: path.resolve('/'),
+    path: path.resolve('dist')
   },
   postcss() {
     return [autoprefixer({
@@ -46,32 +45,26 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'path.html',
       template: './pages/path.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'viewport-viewbox-aspect-ratio.html',
       template: './pages/viewport-viewbox-aspect-ratio.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'path-commands-table.html',
       template: './pages/path-commands-table.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: 'arcs-example.html',
       template: './pages/arcs-example.pug',
-      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: '404.html',
       template: './pages/404.pug',
-      inject: false
     }),
   ],
   resolve: {
