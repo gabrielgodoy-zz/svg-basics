@@ -1,5 +1,11 @@
 # Annotations about SVG
 
-Go to [svg.surge.sh](http://svg.surge.sh/) to see annotations
+![SVG](./svg.png)
 
-`npm i` and `npm start` to run locally
+## See annotations
+
+[svg.surge.sh](http://svg.surge.sh/)
+
+## Build project locally
+
+`npm i` and `npm start`
