@@ -1,0 +1,142 @@
+extends ../assets/templates/default
+
+block content
+  include ../assets/partials/_summary
+  .container
+    .example-case
+      h3 Open path with multiple lines (L x y)
+
+      p.codepen(data-height='300',
+                data-theme-id='0',
+                data-slug-hash='OWWZLq',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='Open path with multiple lines')
+
+    .example-case
+      h3 Closing a path with "Z" at the end
+
+      p.codepen(data-height='300',
+                data-theme-id='0',
+                data-slug-hash='appGow',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='Close path with Z or z')
+
+    .example-case
+      h3 H and V for horizontal and vertical lines
+
+      p.codepen(data-height='300',
+                data-theme-id='0',
+                data-slug-hash='Qddrww',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='H and V for horizontal and vertical lines')
+
+    .example-case
+      h3 Curve with C | Cubic Bézier (C x1 y1, x2 y2, x y)
+      p Its arguments can be resumed as first control/handle point(x1, y1), second control/handle point (x2, y2), and the endpoint where the curve will finish (x, y)
+
+      img(src="assets/images/curve-cubic.png")
+
+      p.codepen(data-height='300',
+                data-theme-id='0',
+                data-slug-hash='PWWRMV',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='Path - Cubic Bézier')
+
+    .example-case
+      h3 Curve continuation with S (S x2 y2, x y)
+      p Curve with C (C x1 y1, x2 y2, x y) and continuation with S (S x2 y2, x y)
+      .alert.alert-info
+        p S assumes that the first control/handle point is a reflection (like in the mirror) of the last control/handle point from the last S or C command.
+
+      img(src="assets/images/curve-cubic-and-continuation.jpg")
+
+      p.codepen(data-height='300',
+                data-theme-id='0',
+                data-slug-hash='bggvyy',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='SVG Path with Arcs')
+
+    .example-case
+      h3 Quadratic curve with Q (Q x1 y1, x y)
+      p Takes two arguments: the control point (Qx1 Qx2) and the end point of the curve (Qx, Qy)
+
+      .alert.alert-info
+        p It's as if both the starting and ending point share a single point for where their control handle end.
+
+      img(src="assets/images/curve-quadratic.jpg")
+
+      p.codepen(data-height='300',
+                data-theme-id='0',
+                data-slug-hash='gggzbq',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='Quadratic curve with Q')
+
+    .example-case
+      h3 Quadratic curve continuation with T (T x y)
+      p T is a shortcut to string together multiple quadratic Beziers
+
+      .alert.alert-warning
+        small * This only works if the previous command was a Q or a T command. If it is not, then the control point is assumed to be the same as the previous point, and you'll only draw lines.
+      .alert.alert-warning
+        p When T comes after a Q, the control point is assumed to be a reflection of the previous one, so you only need to provide the final point handler.
+
+      .alert.alert-info
+        small Both curves (Cubic and quadratic) produce similar results, although the cubic allows you greater freedom in exactly what your curve looks like. Deciding which curve to use is situational and depends on the amount of symmetry your line has.
+
+      img(src="assets/images/curve-quadratic-continuation.jpg")
+
+      p.codepen(data-height='300',
+                data-theme-id='0',
+                data-slug-hash='pRRVJg',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='Quadratic curve continuation with T')
+
+    .example-case
+      h3 Arcs. Sections of circles or ellipses (A rx ry rotation large-arc-flag sweep-flag x y)
+
+      .alert.alert-info
+        p The values of 1,0 (large-arc-flag and sweep-flag) determine how the arc is drawn, as there are four different options here.
+
+      img(src="assets/images/arc.png")
+
+      .alert.alert-info
+        p Draw an arc that is based on the curve an oval makes. First define the width and height of the oval. Then the rotation of the oval. Along with the end point, this makes two possible ovals. So the arc and sweep are either 0 or 1 and determine which oval and which path it will take.
+
+      p.codepen(data-height='400',
+                data-theme-id='0',
+                data-slug-hash='EZZERg',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='SVG Path with Arcs')
+
+    h2 Relative commands in lowercase (m, l, h, v, z, c, s, q, t, a)
+    p Relative commands are the same commands from above but in lowercase, like M turns to m, or L turns to l
+    p Those relative commands looks at the point you currently are and with that point as its reference, it draws the rest.
+    p M 100,100 means "Pick up the pen and move it to the exact coordinates 100,100"
+    p m 100,100 means "Move the Pen 100 down and 100 right from wherever you currently are."
+
+    .example-case
+      p.codepen(data-height='400',
+                data-theme-id='0',
+                data-slug-hash='LxxmVQ',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='Relative path commands')
+
+  script(async='', src='https://production-assets.codepen.io/assets/embed/ei.js')

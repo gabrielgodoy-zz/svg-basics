@@ -1,0 +1,68 @@
+.container
+  h1 Paths
+
+  .well
+    p Great articles on path
+    ul
+      li
+        a(href="https://www.sitepoint.com/closer-look-svg-path-data/") Closer look SVG path data
+      li
+        a(href="https://css-tricks.com/svg-path-syntax-illustrated-guide/") Illustrated guide in CSS-tricks
+
+  br
+
+  h3 Path commands, Line and Curve
+  p Paths have what is called commands that guides the path, and can be divided between line commands and curve commands.
+
+  p
+    | Line commands |&nbsp;
+    a(href="https://developer.mozilla.org/en/docs/Web/SVG/Tutorial/Paths")
+      | MDN Reference
+
+  ul.summary
+    li
+      | Move Tool &nbsp;
+      strong M or m &nbsp;
+      | Commonly used to set a path starting point
+
+    li
+      | Close path command &nbsp;
+      strong Z or z &nbsp;
+      | at the of the d path attribute
+
+    li
+      | Line Tool &nbsp;
+      strong L or l
+
+    li
+      | Horizontal or vertical lines &nbsp;
+      strong H or h
+      |   &nbsp;and &nbsp;
+      strong V or v
+
+  p
+    | Curve commands |&nbsp;
+    a(href="https://developer.mozilla.org/en/docs/Web/SVG/Tutorial/Paths#Curve_commands")
+      | MDN Reference
+  ul.summary
+    li
+      | Bézier curves &nbsp;
+      strong C or c
+
+    li
+      | Bézier curves continuation &nbsp;
+      strong S or s
+
+    li
+      | Quadratic Curve &nbsp;
+      strong Q or q &nbsp;
+
+    li
+      | Quadratic curves continuation &nbsp;
+      strong T or t &nbsp;
+
+    li
+      | Arcs. Sections of circles or ellipses &nbsp;
+      strong A or a &nbsp;
+      | More on Arcs&nbsp;
+      a(href="arcs.html") [here]

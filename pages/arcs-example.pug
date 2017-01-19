@@ -1,0 +1,64 @@
+extends ../assets/templates/default
+
+prepend scripts
+  script(src="https://cdn.rawgit.com/lingtalfi/simpledrag/master/simpledrag.js")
+
+block content
+  .ui
+    .controls
+      | Radius X:
+      input#rx(type='range', min='0', max='500')
+      br
+      |         Radius Y:
+      input#ry(type='range', min='0', max='500')
+      br
+      |         Rotation:
+      input#rot(type='range', min='0', max='360', value='0')
+      br
+      |         Large arc flag:
+      input#laf(type='checkbox')
+      br
+      |         Sweep flag:
+      input#sf(type='checkbox')
+      br
+      |         Arc command:
+      span#arcvalue
+      br
+    .results
+      | mouse: pageX
+      span#pagex
+      | ,
+      span#pagey(pagey='')
+      br
+      |         A:
+      span#axvalue
+      | ,
+      span#ayvalue
+      br
+      |         B:
+      span#bxvalue
+      | ,
+      span#byvalue
+      br
+      |         m:
+      span#mvalue
+      br
+      |         b(A):
+      span#bavalue
+      br
+      |         b(B):
+      span#bbvalue
+      br
+      |         contextWidth:
+      span#cwvalue
+      br
+  svg#svgcontext(width='100%', height='500')
+    path#arc2(d='', fill='none', stroke='green', stroke-width='2')
+    path#arc3(d='', fill='none', stroke='green', stroke-width='2')
+    path#arc4(d='', fill='none', stroke='green', stroke-width='2')
+    path#arc(d='M100 100 A 100 100 0 1 0 200 100', fill='none', stroke='red', stroke-width='4')
+    line#line0(x1='0', y1='0', x2='0', y2='0', fill='none', stroke='black', stroke-width='2')
+    line#line(x1='0', y1='0', x2='0', y2='0', fill='none', stroke='black', stroke-width='2')
+    line#line2(x1='0', y1='0', x2='0', y2='0', fill='none', stroke='black', stroke-width='2')
+    circle#dotHandler1(cx='100', cy='100', r='5', fill='red', stroke='red', stroke-width='2')
+    circle#dotHandler2(cx='200', cy='100', r='5', fill='red', stroke='red', stroke-width='2')

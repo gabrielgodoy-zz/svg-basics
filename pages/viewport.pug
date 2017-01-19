@@ -1,0 +1,101 @@
+extends ../assets/templates/default
+
+block content
+  .container
+    h1 Viewport and viewbox
+
+    .well
+      p Great article on viewport
+      ul
+        li
+          a(href="https://sarasoueidan.com/blog/svg-coordinate-systems/")
+            | Understanding SVG Coordinate Systems and Transformations
+        li
+          a(href="https://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html")
+            | Interactive demo of viewport and viewbox
+        li
+          a(href="http://jonibologna.com/svg-viewbox-and-viewport/")
+            | A Look At SVG viewBox and viewport
+
+    h2 Viewport
+    p.lead viewport is defined by&nbsp;
+      strong width and height attributes
+    p The viewport is the viewing area where the SVG will be visible. You can think of the viewport as a window through which you can see a particular scene. The scene may be entirely or partially visible through that window.
+
+    p You specify the size of the viewport using the width and height attributes on the outermost svg element.
+
+    h2 Viewbox
+    p.lead viewbox values are&nbsp;
+      strong min-x, min-y, width, height
+
+    h2 preserveAspectRatio
+    p.lead It boils down to preserveAspectRatio = "&lt;align&gt; &lt;meetOrSlice&gt;"
+
+    .alert.alert-info Left unspecified the default setting here forces uniform scaling and the entire viewBox is visible within the viewport.
+
+    .panel.panel-primary
+      .panel-heading First part of preserveAspectRatio attribute | Alignment options
+      .panel-body
+        p You combine the x- and y-parts into a single value by appending the y-part after the x-part.
+        p Examples &nbsp;
+          strong xMaxYMax
+          |  or&nbsp;
+          strong xMidYMid
+      table.table.table-bordered.paths-table
+        thead
+          tr
+            th Value
+            th Description
+        tr
+          td xMin
+          td Align minimum x of view box with the left edge of the viewport.
+        tr
+          td xMid
+          td Align midpoint on the x-axis of view box with the center of the viewport on the x-axis.
+        tr
+          td xMax
+          td Align maximum x of view box with the right edge of the viewport.
+        tr
+          td YMin
+          td Align minimum y of view box with the top edge of the viewport.
+        tr
+          td YMid
+          td Align midpoint on the y-axis of view box with the center point of the viewport on the y-axis.
+        tr
+          td YMax
+          td Align maximum y of view box with the bottom edge of the viewport.
+
+    .panel.panel-primary
+      .panel-heading Second part of preserveAspectRatio attribute
+      .panel-body
+        p Examples &nbsp;
+          strong preserveAspectRatio="xMidYMid meet"
+          |  or&nbsp;
+          strong preserveAspectRatio="xMinYMin slice"
+      table.table.table-bordered.paths-table
+        thead
+          tr
+            th Value
+            th Description
+        tr
+          td meet
+          td Preserves aspect ratio and scales view box to fit within viewport.
+        tr
+          td slice
+          td Preserves aspect ratio and slices off any part of the image that does not fit inside the viewport.
+        tr
+          td none
+          td Does not preserve aspect ratio. Scales image to fit view box fully into viewport. Proportions will be distorted.
+
+    .example-case
+      h3 Example of viewport and viewbox
+
+      p.codepen(data-height='800',
+                data-theme-id='0',
+                data-slug-hash='rjyaRp',
+                data-default-tab='html,result',
+                data-user='gabrielgodoy',
+                data-embed-version='2',
+                data-pen-title='SVG PreserveAspectRatio')
+
+  script(async='', src='https://production-assets.codepen.io/assets/embed/ei.js')
