@@ -54,8 +54,8 @@ module.exports = {
       inject: false
     }),
     new HtmlWebpackPlugin({
-      filename: 'viewport.html',
-      template: './pages/viewport.pug',
+      filename: 'viewport-viewbox-aspect-ratio.html',
+      template: './pages/viewport-viewbox-aspect-ratio.pug',
       inject: false
     }),
     new HtmlWebpackPlugin({
@@ -66,6 +66,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'arcs-example.html',
       template: './pages/arcs-example.pug',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: './pages/404.pug',
       inject: false
     }),
   ],
