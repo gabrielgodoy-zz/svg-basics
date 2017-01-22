@@ -12,39 +12,39 @@ block content
             th Description
         tr
           td M
-            span.arguments x,y
+            span.arguments  x,y
           td Move to the absolute coordinates x,y
         tr
           td m
-            span.arguments x,y
+            span.arguments  x,y
           td Move to the right x and down y (or left and up if negative values)
         tr
           td L
-            span.arguments x,y
+            span.arguments  x,y
           td Draw a straight line to the absolute coordinates x,y
         tr
           td l
-            span.arguments x,y
+            span.arguments  x,y
           td Draw a straight line to a point that is relatively right x and down y (or left and up if negative values)
         tr
           td H
-            span.arguments x
+            span.arguments  x
           td Draw a line horizontally to the exact coordinate x
         tr
           td h
-            span.arguments x
+            span.arguments  x
           td Draw a line horizontally relatively to the right x (or to the left if a negative value)
         tr
           td V
-            span.arguments y
+            span.arguments  y
           td Draw a line vertically to the exact coordinate y
         tr
           td v
-            span.arguments y
+            span.arguments  y
           td Draw a line vertically relatively down y (or up if a negative value)
         tr
           td Z or z
-            span.arguments y
+            span.arguments  y
           td Draw a straight line back to the start of the path
 
     .panel.panel-primary
@@ -56,42 +56,42 @@ block content
             th Description
         tr
           td C
-            span.arguments cX1,cY1 cX2,cY2 eX,eY
+            span.arguments  X1,Y1 X2,Y2 X,Y
           td Draw a bezier curve based on two bezier control points and end at specified coordinates
         tr
           td c
-            span.arguments cX1,cY1 cX2,cY2 eX,eY
+            span.arguments  X1,Y1 X2,Y2 X,Y
           td Same as C, with all relative values
         tr
           td S
-            span.arguments cX2,cY2 eX,eY
+            span.arguments  X2,Y2 X,Y
           td Basically a C command that assumes the first bezier control point is a reflection of the last bezier point used in the previous S or C command
         tr
           td s
-            span.arguments cX2,cY2 eX,eY
+            span.arguments  X2,Y2 X,Y
           td Same as S, with all relative values
         tr
           td Q
-            span.arguments cX,cY eX,eY
+            span.arguments  X1,Y1 X,Y
           td Draw a bezier curve based a single bezier control point and end at specified coordinates
         tr
           td q
-            span.arguments cX,cY eX,eY
+            span.arguments  X1,Y1 X,Y
           td Same as q, with all relative values
         tr
           td T
-            span.arguments eX,eY
+            span.arguments  X,Y
           td Basically a Q command that assumes the first bezier control point is a reflection of the last bezier point used in the previous Q or T command
         tr
           td t
-            span.arguments eX,eY
+            span.arguments  X,Y
           td Same as T, with all relative values
         tr
           td A
-            span.arguments rX,rY rotation, arc, sweep, eX,eY
+            span.arguments  rX,rY rotation, arc, sweep, X,Y
           td Draw an arc that is based on the curve an oval makes. First define the width and height of the oval. Then the rotation of the oval. Along with the end point, this makes two possible ovals. So the arc and sweep are either 0 or 1 and determine which oval and which path it will take.
         tr
           td a
-            span.arguments rX,rY rotation, arc, sweep, eX,eY
-          td Same as A, with relative values for eX,eY
+            span.arguments  rX,rY rotation, arc, sweep, X,Y
+          td Same as A, with relative values for X,Y
 
