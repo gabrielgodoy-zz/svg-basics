@@ -2,38 +2,45 @@ extends templates/default
 
 block content
   .container
-    h1 Viewport, viewbox and preserveAspectRatio
+    h1 viewport, viewBox and preserveAspectRatio
 
     .well
-      p Great articles on viewport, viewbox and preserveAspectRatio
+      p All the credit for this material goes to these people who wrote those articles
       ul
         li
           a(href="https://sarasoueidan.com/blog/svg-coordinate-systems/")
             | Understanding SVG Coordinate Systems and Transformations
         li
           a(href="https://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html")
-            | Interactive demo of viewport and viewbox
+            | Interactive demo of viewport and viewBox
         li
           a(href="http://jonibologna.com/svg-viewbox-and-viewport/")
             | A Look At SVG viewBox and viewport
 
-    h2 Viewport
+    h2 viewport
     p.lead viewport is defined by&nbsp;
-      strong width and height attributes
+      strong width and height&nbsp;
+      | SVG attributes
     p The viewport is the viewing area where the SVG will be visible. You can think of the viewport as a window through which you can see a particular scene. The scene may be entirely or partially visible through that window.
 
     p You specify the size of the viewport using the width and height attributes on the outermost svg element.
 
-    h2 Viewbox
-    p.lead viewbox values are&nbsp;
+    h2 viewBox
+    p.lead viewBox values are&nbsp;
       strong min-x, min-y, width, height
+
+    p The viewBox always thrive to fit the viewport. If it is bigger than the viewport it will scale down. If it is smaller than the viewport it will scale up to fit the viewport.
+
+    p Before the the scaling process of the viewBox to fit the viewport, it will crop the graphics inside its area. And when the process of scaling up or down occurs it will also affect the graphics contained bu the viewBox.
+
+    .alert.alert-info When the viewBox have the same width and height as the viewport that wraps it, it will remain unchanged.
 
     h2 preserveAspectRatio
     p.lead It boils down to preserveAspectRatio = "&lt;align&gt; &lt;meetOrSlice&gt;"
 
-    .alert.alert-info Left unspecified the default setting here forces uniform scaling and the entire viewBox is visible within the viewport.
+    .alert.alert-info Left unspecified the default setting for preserveAspectRatio forces uniform scaling and the entire viewBox is visible within the viewport.
 
-    .panel.panel-primary
+    .panel.panel-default
       .panel-heading First part of preserveAspectRatio attribute | Alignment options
       .panel-body
         p You combine the x- and y-parts into a single value by appending the y-part after the x-part.
@@ -65,7 +72,7 @@ block content
           td YMax
           td Align maximum y of view box with the bottom edge of the viewport.
 
-    .panel.panel-primary
+    .panel.panel-default
       .panel-heading Second part of preserveAspectRatio attribute
       .panel-body
         p Examples &nbsp;
@@ -88,14 +95,14 @@ block content
           td Does not preserve aspect ratio. Scales image to fit view box fully into viewport. Proportions will be distorted.
 
     .example-case
-      h3 Example of viewport and viewbox
+      h3 Example of viewport and viewBox
 
       p.codepen(data-height='800',
-                data-theme-id='0',
-                data-slug-hash='rjyaRp',
-                data-default-tab='html,result',
-                data-user='gabrielgodoy',
-                data-embed-version='2',
-                data-pen-title='SVG preserveAspectRatio')
+      data-theme-id='0',
+      data-slug-hash='rjyaRp',
+      data-default-tab='html,result',
+      data-user='gabrielgodoy',
+      data-embed-version='2',
+      data-pen-title='SVG preserveAspectRatio')
 
   script(async='', src='https://production-assets.codepen.io/assets/embed/ei.js')

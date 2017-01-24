@@ -1,0 +1,119 @@
+extends templates/default
+
+block content
+  .container
+    h1 Basic shapes
+    p.lead All basic shapes can have fill color, stroke and common svg style attributes that paths have
+    .panel.panel-default
+      .panel-heading List of basic shapes and most used properties
+      table.table.table-bordered.paths-table
+        thead
+          tr
+            th Shape
+            th Properties
+        tr
+          td.shape-cell
+            p.property-name &lt;rect&gt;
+            svg.small-svg
+              rect(width="50", height="50")
+          td
+            ul.properties-list
+              li
+                strong x&nbsp;
+                | Corresponds to attribute 'x’ on the given 'rect' element
+              li
+                strong y&nbsp;
+                | Corresponds to attribute 'y’ on the given 'rect' element
+              li
+                strong width&nbsp;
+                | Corresponds to attribute 'width' on the given 'rect' element
+              li
+                strong height&nbsp;
+                | Corresponds to attribute 'height' on the given 'rect' element
+              li
+                strong rx&nbsp;
+                | Corresponds to attribute 'rx' on the given 'rect' element
+              li
+                strong ry&nbsp;
+                | Corresponds to attribute 'ry' on the given 'rect' element
+        tr
+          td.shape-cell
+            p.property-name &lt;circle&gt;
+            svg.small-svg
+              circle(r="25" cx="25" cy="50")
+          td
+            ul.properties-list
+              li
+                strong cx&nbsp;
+                | Corresponds to attribute 'cx' on the given 'circle' element
+              li
+                strong cy&nbsp;
+                | Corresponds to attribute 'cy' on the given 'circle' element
+              li
+                strong r&nbsp;
+                | Corresponds to attribute 'r’ on the given 'circle' element
+
+        tr
+          td.shape-cell
+            p.property-name &lt;ellipse&gt;
+            svg.small-svg
+              ellipse(rx="20" ry="35" cx="30" cy="50")
+          td
+            ul.properties-list
+              li
+                strong cx&nbsp;
+                | Corresponds to attribute 'cx' on the given 'ellipse' element
+              li
+                strong cy&nbsp;
+                | Corresponds to attribute 'cy' on the given 'ellipse' element
+              li
+                strong rx&nbsp;
+                | Corresponds to attribute 'rx' on the given 'ellipse' element
+              li
+                strong ry&nbsp;
+                | Corresponds to attribute 'ry' on the given 'ellipse' element
+
+        tr
+          td.shape-cell
+            p.property-name &lt;line&gt;
+            svg.small-svg
+              line(x1="0" x2="100" y1="50" y2="70" stroke-width="3" stroke="black")
+          td
+            ul.properties-list
+              li
+                strong x1&nbsp;
+                | Corresponds to attribute 'x1' on the given 'line' element
+              li
+                strong y1&nbsp;
+                | Corresponds to attribute 'y1' on the given 'line' element
+              li
+                strong x2&nbsp;
+                | Corresponds to attribute 'x2' on the given 'line' element
+              li
+                strong y2&nbsp;
+                | Corresponds to attribute 'y2' on the given 'line' element
+
+        tr
+          td.shape-cell
+            p.property-name &lt;polyline&gt;
+            svg.small-svg
+              polyline(fill="none"
+              stroke="blue"
+              stroke-width="3"
+              points="0,0 80,50 80,80 100,80 100,50 180,0")
+          td
+            ul.properties-list
+              li
+                strong points&nbsp;
+                | Provides access to the base contents of the 'point' attribute.
+
+        tr
+          td.shape-cell
+            p.property-name &lt;polygon&gt;
+            svg.small-svg
+              polygon(fill="red" stroke="blue" stroke-width="3" points="50,75  79,61 69,61 97,15 23,01 50,50")
+          td
+            ul.properties-list
+              li
+                strong points&nbsp;
+                | Provides access to the base (i.e., static) contents of the 'point' attribute.

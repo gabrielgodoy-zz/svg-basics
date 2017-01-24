@@ -63,6 +63,10 @@ module.exports = {
       template: './pages/arcs-example.pug',
     }),
     new HtmlWebpackPlugin({
+      filename: 'basic-shapes.html',
+      template: './pages/basic-shapes.pug',
+    }),
+    new HtmlWebpackPlugin({
       filename: '404.html',
       template: './pages/404.pug',
     }),

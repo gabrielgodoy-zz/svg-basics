@@ -74,6 +74,10 @@ module.exports = {
       template: './pages/path-commands-table.pug',
     }),
     new HtmlWebpackPlugin({
+      filename: 'basic-shapes.html',
+      template: './pages/basic-shapes.pug',
+    }),
+    new HtmlWebpackPlugin({
       filename: 'arcs-example.html',
       template: './pages/arcs-example.pug',
     }),
