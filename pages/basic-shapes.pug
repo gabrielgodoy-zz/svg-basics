@@ -10,7 +10,7 @@ block content
         thead
           tr
             th Shape
-            th Properties
+            th Attributes
         tr
           td.shape-cell
             p.property-name &lt;rect&gt;
@@ -20,22 +20,22 @@ block content
             ul.properties-list
               li
                 strong x&nbsp;
-                | Corresponds to attribute 'x’ on the given 'rect' element
+                | The x position of the top left corner of the rectangle
               li
                 strong y&nbsp;
-                | Corresponds to attribute 'y’ on the given 'rect' element
+                | The y position of the top left corner of the rectangle
               li
                 strong width&nbsp;
-                | Corresponds to attribute 'width' on the given 'rect' element
+                | The width of the rectangle
               li
                 strong height&nbsp;
-                | Corresponds to attribute 'height' on the given 'rect' element
+                | The height of the rectangle
               li
                 strong rx&nbsp;
-                | Corresponds to attribute 'rx' on the given 'rect' element
+                | The x radius of the corners of the rectangle
               li
                 strong ry&nbsp;
-                | Corresponds to attribute 'ry' on the given 'rect' element
+                | The y radius of the corners of the rectangle
         tr
           td.shape-cell
             p.property-name &lt;circle&gt;
@@ -45,13 +45,13 @@ block content
             ul.properties-list
               li
                 strong cx&nbsp;
-                | Corresponds to attribute 'cx' on the given 'circle' element
+                | The x position of the center of the circle
               li
                 strong cy&nbsp;
-                | Corresponds to attribute 'cy' on the given 'circle' element
+                | The y position of the center of the circle
               li
                 strong r&nbsp;
-                | Corresponds to attribute 'r’ on the given 'circle' element
+                | The radius of the circle
 
         tr
           td.shape-cell
@@ -62,16 +62,16 @@ block content
             ul.properties-list
               li
                 strong cx&nbsp;
-                | Corresponds to attribute 'cx' on the given 'ellipse' element
+                | The x position of the center of the ellipse
               li
                 strong cy&nbsp;
-                | Corresponds to attribute 'cy' on the given 'ellipse' element
+                | The y position of the center of the ellipse
               li
                 strong rx&nbsp;
-                | Corresponds to attribute 'rx' on the given 'ellipse' element
+                | The x radius of the ellipse
               li
                 strong ry&nbsp;
-                | Corresponds to attribute 'ry' on the given 'ellipse' element
+                | The y radius of the ellipse
 
         tr
           td.shape-cell
@@ -82,16 +82,16 @@ block content
             ul.properties-list
               li
                 strong x1&nbsp;
-                | Corresponds to attribute 'x1' on the given 'line' element
+                | The x position of point 1
               li
                 strong y1&nbsp;
-                | Corresponds to attribute 'y1' on the given 'line' element
+                | The y position of point 1
               li
                 strong x2&nbsp;
-                | Corresponds to attribute 'x2' on the given 'line' element
+                | The x position of point 2
               li
                 strong y2&nbsp;
-                | Corresponds to attribute 'y2' on the given 'line' element
+                | The y position of point 2
 
         tr
           td.shape-cell
@@ -105,7 +105,7 @@ block content
             ul.properties-list
               li
                 strong points&nbsp;
-                | Provides access to the base contents of the 'point' attribute.
+                | A list of points, each number separated by a space, comma, EOL, or a line feed character. Each point must contain two numbers, an x coordinate and a y coordinate. So the list (0,0), (1,1) and (2,2) could be written: "0 0, 1 1, 2 2"
 
         tr
           td.shape-cell
@@ -116,4 +116,15 @@ block content
             ul.properties-list
               li
                 strong points&nbsp;
-                | Provides access to the base (i.e., static) contents of the 'point' attribute.
+                | A list of points, each number separated by a space, comma, EOL, or a line feed character. Each point must contain two numbers, an x coordinate and a y coordinate. So the list (0,0), (1,1) and (2,2) could be written: "0 0, 1 1, 2 2". The drawing then closes the path, so a final straight line would be drawn from (2,2) to (0,0)
+
+        tr
+          td.shape-cell
+            p.property-name &lt;path&gt;
+            svg.small-svg
+              path(d="M 20 30 Q 40 5, 50 30" stroke="tomato" stroke-width="2")
+          td
+            ul.properties-list
+              li
+                strong d&nbsp;
+                | A list of points and other information about how to draw the path. See the Paths section for more information
