@@ -70,6 +70,10 @@ module.exports = {
       template: './pages/viewport-viewbox-aspect-ratio.pug',
     }),
     new HtmlWebpackPlugin({
+      filename: 'defs.html',
+      template: './pages/defs.pug',
+    }),
+    new HtmlWebpackPlugin({
       filename: 'path-commands-table.html',
       template: './pages/path-commands-table.pug',
     }),
